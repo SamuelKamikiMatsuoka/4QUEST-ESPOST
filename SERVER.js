@@ -5,7 +5,7 @@ const app = express();
 const PORT = 8080;
 const MEDIA_APROVACAO = 6;
 
-// Middleware para ler o corpo da requisição JSON
+
 app.use(express.json());
 
 app.post("/alunos", (req, res) => {
