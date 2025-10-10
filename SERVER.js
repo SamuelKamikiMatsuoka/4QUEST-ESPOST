@@ -18,7 +18,7 @@ app.post("/soma", (req, res) => {
         }
 
 
-        const naoNumerico = numeros.find(item => typeof item !== 'number');
+        const naoNumerico = numeros.find(item => typeof item !== `number`);
 
         if (naoNumerico == undefined) {
 
