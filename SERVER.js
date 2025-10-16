@@ -6,20 +6,20 @@ const PORT = 8080;
 app.use(express.json());
 
 function ValidaNumeros(pNumeros) {
-    
-    for(const numero of pNumeros){
-       
-       
+
+    for (const numero of pNumeros) {
+
+
         const naoNumerico = pNumeros.find(item => typeof item !== `number`);
 
-        
+
         if (naoNumerico !== undefined) {
             throw new Error("Não é um número. Todos os valores devem ser numéricos para o cálculo.");
-            };
-        }
+        };
+    }
 
 
-        const resultado = pNumeros.reduce((acumulador, valorAtual) => acumulador + valorAtual);
+    const resultado = pNumeros.reduce((acumulador, valorAtual) => acumulador + valorAtual);
     return resultado;
 }
 
