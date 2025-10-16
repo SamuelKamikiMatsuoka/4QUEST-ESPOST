@@ -39,7 +39,7 @@ app.post("/soma", (req, res) => {
 
 
 
-app.use((req, res)=>{
+app.use((req, res) => {
     res.status(404).send(`pagina não encontrada!`)
 })
 
