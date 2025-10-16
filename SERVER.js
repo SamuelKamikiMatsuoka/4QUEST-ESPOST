@@ -37,6 +37,13 @@ app.post("/soma", (req, res) => {
     }
 });
 
+
+
+app.use((req, res)=>{
+    res.status(404).send(`pagina não encontrada!`)
+})
+
+
 app.listen(PORT, () => {
     console.log(`rodando em http://localhost:${PORT}`);
 });
