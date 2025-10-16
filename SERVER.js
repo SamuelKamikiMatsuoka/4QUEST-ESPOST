@@ -31,7 +31,20 @@ function salvarRegistro(pUsuario) {
     const arquivo = `/usuarios.json`
     let usuarios = [];
 
+     if(fs.existsSync(arquivo)){
+        const dadosArquivo = fs.readFileSync(arquivo, 'utf8');
+        if (dadosArquivo){
+            usuarios = JSON.parse(dadosArquivo)
+        }
+    }
+        usuarios.push(pUsuario)
+
+         fs.writeFileSync(arquivo, JSON.stringify(usuarios, null, 2), 'utf8');
 }
+
+
+
+
 
 
 
