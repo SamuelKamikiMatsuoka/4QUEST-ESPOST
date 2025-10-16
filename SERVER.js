@@ -12,17 +12,26 @@ function validarDados(pNome, pEmail, pSenha) {
         throw new Error("insira pelo menos 3 letras em seu nome!");
     }
     if (!pEmail || typeof pEmail !== `string` || !pEmail.includes("@")) {
-
+        throw new Error("O email precisa ter @ para ser considerado ");
 
     }
+    if (!pSenha || String(!pSenha).trim().length < 4) {
+        throw new Error("Coloque no minimo 4 caracteres nessa senha");
+    }
+
+    return {
+        "pNome": pNome,
+        "pEmail": pEmail,
+        "pSenha": pSenha
+    };
+}
 
 
+function salvarRegistro(pUsuario) {
+    const arquivo = `/usuarios.json`
+    let usuarios = [];
 
-
-
-
-
-
+}
 
 
 
