@@ -53,10 +53,9 @@ app.post("/alunos", (req, res) => {
 });
 
 
-app.get('/', (req, res) => {
-    res.send(`Servidor de alunos Express rodando na porta ${PORT}. Use POST em /alunos.`);
-});
-
+app.use((req, res)=>{
+    res.status(404).send(`pagina não encontrada!`)
+})
 
 app.listen(PORT, () => {
     console.log(`Rodando o servidor na porta: http://localhost:${PORT}`);
